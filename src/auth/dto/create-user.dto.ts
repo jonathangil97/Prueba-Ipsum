@@ -18,18 +18,23 @@ export class CreateUserDto {
     @IsNotEmpty({ message: 'La contraseña es obligatoria' })
     password: string;
 
+    @IsOptional()
     @IsString({ message: 'La imagen de perfil debe ser una cadena de texto' })
     profileImage?: string;
 
+    @IsOptional()
     @IsString({ message: 'La comida favorita debe ser una cadena de texto' })
     favoriteFood?: string;
 
+    @IsOptional()
     @IsString({ message: 'El artista favorito debe ser una cadena de texto' })
     favoriteArtist?: string;
 
+    @IsOptional()
     @IsString({ message: 'El lugar favorito debe ser una cadena de texto' })
     favoritePlace?: string;
 
+    @IsOptional()
     @IsString({ message: 'El color favorito debe ser una cadena de texto' })
     favoriteColor?: string;
 }

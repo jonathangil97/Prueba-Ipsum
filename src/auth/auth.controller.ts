@@ -5,6 +5,7 @@ import { CreateUserDto, LoginDto,  RegisterUserDto, UpdateAuthDto } from './dto'
 import { AuthGuard } from './guards/auth.guard';
 
 
+
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -14,10 +15,12 @@ export class AuthController {
     return this.authService.create(createUserDto);
   }
 
+
   @Post('/login')
   login(@Body() loginDto: LoginDto) { 
     return this.authService.login(loginDto);
   }
+
 
   @Post('/register')
   register(@Body() registerUserDto: RegisterUserDto) { 
@@ -27,8 +30,11 @@ export class AuthController {
   @UseGuards( AuthGuard )
   @Get()
   findAll( @Request() req: Request) { 
-    return this.authService.findAll();
+    const user = req['user'];
+
+    return user;
   }
+
 
   @Get(':id')
   findOne(@Param('id') id: string) {
