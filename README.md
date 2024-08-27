@@ -11,6 +11,7 @@ bash
 Copy code
 nest new project-name
 Selecciona TypeScript como el lenguaje de programación.
+
 2. Configuración de MongoDB con Docker
 Configurar MongoDB con Docker:
 Crea un archivo docker-compose.yml con la configuración de MongoDB.
@@ -19,6 +20,7 @@ bash
 Copy code
 docker-compose up -d
 MongoDB estará corriendo en un contenedor Docker, accesible desde tu proyecto.
+
 3. Configuración de Mongoose
 Instalar Mongoose:
 
@@ -33,6 +35,7 @@ bash
 Copy code
 MONGODB_URI=mongodb://localhost:27017/nestjs_project
 Configura el módulo de Mongoose en app.module.ts para conectarte a la base de datos usando la variable de entorno.
+
 4. Creación de Esquemas y DTOs
 Crear el Esquema de Usuario:
 
@@ -50,6 +53,7 @@ bash
 Copy code
 npm install class-validator class-transformer
 Configura el ValidationPipe global en main.ts para manejar las validaciones.
+
 5. Implementación de la Autenticación
 Crear el Módulo de Autenticación:
 
@@ -69,6 +73,7 @@ Configura JWT en el servicio de autenticación y utiliza un AuthGuard para prote
 Implementar Login:
 
 Crea el endpoint /login en AuthController para manejar la autenticación de usuarios.
+
 6. Protección de Rutas
 Implementar el AuthGuard:
 
